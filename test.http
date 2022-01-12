@@ -1,0 +1,85 @@
+### Add Product
+POST http://localhost:8080/api/products
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "A0004",
+  "name": "Iphone 12",
+  "price": 20000000,
+  "quantity": 10
+}
+
+
+### Validation Error Test
+POST http://localhost:8080/api/products
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "",
+  "name": "",
+  "price": 0,
+  "quantity": -4
+}
+
+### Get Product Test
+GET http://localhost:8080/api/products/A0001
+X-Api-Key: SECRET
+Accept: application/json
+
+### Get Product Salah Test
+GET http://localhost:8080/api/products/
+X-Api-Key: SECRET
+Accept: application/json
+
+### Update Product Test
+PUT http://localhost:8080/api/products/A0001
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Apple Mac Book Pro 13 2021",
+  "price": 30000000,
+  "quantity": 5
+}
+
+### Update Product with invalid body Test
+PUT http://localhost:8080/api/products/
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "",
+  "price": 0,
+  "quantity": -1
+}
+
+### Delete Product Test
+DELETE http://localhost:8080/api/products/A0001
+X-Api-Key: SECRET
+Accept: application/json
+
+### Delete Product Vailed Test
+DELETE http://localhost:8080/api/products/
+X-Api-Key: SECRET
+Accept: application/json
+
+### List Product
+GET http://localhost:8080/api/products
+X-Api-Key: SECRET
+Accept: application/json
+
+### List Product with size parameter
+GET http://localhost:8080/api/products?size=2
+X-Api-Key: SECRET
+Accept: application/json
+
+### List Product with size and page parameter
+GET http://localhost:8080/api/products?size=&page=1
+X-Api-Key: SECRET
+Accept: application/json
